@@ -1,0 +1,46 @@
+[debug] [2023-09-07T08:00:33.563Z] ----------------------------------------------------------------------
+[debug] [2023-09-07T08:00:33.574Z] Command:       C:\Node.js\node.exe C:\Users\ASUS\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js login
+[debug] [2023-09-07T08:00:33.577Z] CLI Version:   12.5.2
+[debug] [2023-09-07T08:00:33.578Z] Platform:      win32
+[debug] [2023-09-07T08:00:33.579Z] Node Version:  v16.14.2
+[debug] [2023-09-07T08:00:33.582Z] Time:          Thu Sep 07 2023 15:00:33 GMT+0700 (Waktu Indonesia Barat)
+[debug] [2023-09-07T08:00:33.583Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-09-07T08:00:33.633Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[info] Already logged in as patyurrr@gmail.com
+[debug] [2023-09-07T08:01:04.846Z] ----------------------------------------------------------------------
+[debug] [2023-09-07T08:01:04.850Z] Command:       C:\Node.js\node.exe C:\Users\ASUS\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js logout
+[debug] [2023-09-07T08:01:04.851Z] CLI Version:   12.5.2
+[debug] [2023-09-07T08:01:04.852Z] Platform:      win32
+[debug] [2023-09-07T08:01:04.853Z] Node Version:  v16.14.2
+[debug] [2023-09-07T08:01:04.855Z] Time:          Thu Sep 07 2023 15:01:04 GMT+0700 (Waktu Indonesia Barat)
+[debug] [2023-09-07T08:01:04.855Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-09-07T08:01:04.867Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2023-09-07T08:01:05.068Z] >>> [apiv2][query] GET https://accounts.google.com/o/oauth2/revoke token=1%2F%2F0gikpYSmSlZ4ACgYIARAAGBASNwF-L9IrhyPynQaHxfKIBZKPZ-MfgFGhFiz6PX3-r_XWpihov-530TOns5rOtHNDL0OfpC4STo0
+[debug] [2023-09-07T08:01:05.254Z] <<< [apiv2][status] GET https://accounts.google.com/o/oauth2/revoke 200
+[debug] [2023-09-07T08:02:43.018Z] ----------------------------------------------------------------------
+[debug] [2023-09-07T08:02:43.028Z] Command:       C:\Node.js\node.exe C:\Users\ASUS\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js login
+[debug] [2023-09-07T08:02:43.029Z] CLI Version:   12.5.2
+[debug] [2023-09-07T08:02:43.029Z] Platform:      win32
+[debug] [2023-09-07T08:02:43.030Z] Node Version:  v16.14.2
+[debug] [2023-09-07T08:02:43.032Z] Time:          Thu Sep 07 2023 15:02:43 GMT+0700 (Waktu Indonesia Barat)
+[debug] [2023-09-07T08:02:43.033Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-09-07T08:02:43.047Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[info] i  Firebase optionally collects CLI and Emulator Suite usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+ 
+[debug] [2023-09-07T08:02:43.759Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2023-09-07T08:02:43.761Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[info] i  To change your data collection preference at any time, run `firebase logout` and log in again. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=391217742&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...
+[debug] [2023-09-07T08:03:03.690Z] >>> [apiv2][query] POST https://accounts.google.com/o/oauth2/token [none]
+[debug] [2023-09-07T08:03:03.703Z] >>> [apiv2][body] POST https://accounts.google.com/o/oauth2/token [omitted]
+[debug] [2023-09-07T08:03:03.844Z] <<< [apiv2][status] POST https://accounts.google.com/o/oauth2/token 200
+[debug] [2023-09-07T08:03:03.844Z] <<< [apiv2][body] POST https://accounts.google.com/o/oauth2/token [omitted]
+[info] 
+[info] +  Success! Logged in as ivanfaturrohman04@gmail.com 

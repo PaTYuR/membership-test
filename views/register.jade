@@ -1,0 +1,145 @@
+extends layout
+
+block content
+  div(class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8")
+    div(class="sm:mx-auto sm:w-full sm:max-w-sm")
+      img(class="mx-auto h-10 w-auto", src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600", alt="Your Company")
+      h2(class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900") Create your account
+    div(class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm")
+      form(class="space-y-3", action="/register", method="POST", name="formRegister", onsubmit="return validateForm()")
+        div
+          label(for="email", class="block text-sm font-medium leading-6 text-gray-900") Email address
+          div(class="mt-2")
+            input#email(name="email", type="email", autocomplete="email", class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" onblur="blurEmail()")
+            script.
+              function blurEmail() {
+                const value = document.getElementById('email').value
+                const element_id = document.getElementById('error-messages-email')
+                const regex_mail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                if(value == ''){
+                  element_id.innerHTML = `Can't be empety`
+                } else if (!value.match(regex_mail)) {
+                  element_id.innerHTML = `Invalid email`
+                } else {
+                  element_id.innerHTML = ``
+                }
+              }
+            div(class="text-rose-900 py-1", role="alert")
+              p#error-messages-email(class="text-sm font-semibold mt-1")
+        div
+          div(class="flex items-center justify-between")
+            label(for="password", class="block text-sm font-medium leading-6 text-gray-900") Password
+          div(class="mt-2 relative")
+            input#password(name="password", type="password", autocomplete="current-password", class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pr-10" onblur="blurPassword()")
+            i#eye-password(class="fa-solid fa-eye absolute top-3 right-3 cursor-pointer" onclick='togglePassword()')
+            script.
+              function blurPassword() {
+                const value = document.getElementById('password').value
+                const element_id = document.getElementById('error-messages-password')
+                const regex_password = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+                if(value == ''){
+                  element_id.innerHTML = `Can't be empety`
+                } else if (!value.match(regex_password)) {
+                  element_id.innerHTML = `Minimum eight characters, at least one uppercase letter, and one number`
+                } else {
+                  element_id.innerHTML = ``
+                }
+              }
+              function togglePassword() {
+                const element = document.getElementById('password')
+                const eye = document.getElementById('eye-password')
+                if(element.type == 'password') {
+                  element.type = 'text'
+                  eye.classList.add('fa-eye-slash')
+                  eye.classList.remove('fa-eye')
+                } else {
+                  element.type = 'password'
+                  eye.classList.remove('fa-eye-slash')
+                  eye.classList.add('fa-eye')
+                }
+              }
+            div(class="text-rose-900 py-1", role="alert")
+              p#error-messages-password(class="text-sm font-semibold mt-1")
+        div
+          div(class="flex items-center justify-between")
+            label(for="confirm-password", class="block text-sm font-medium leading-6 text-gray-900") Confirm Password
+          div(class="mt-2 relative")
+            input#confirm-password(name="confirm-password", type="password", autocomplete="current-password", class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pr-10" onblur="blurConfirmPassword()")
+            i#eye-confirm-password(class="fa-solid fa-eye absolute top-3 right-3 cursor-pointer" onclick='toggleConfirmPassword()')
+            script.
+              function blurConfirmPassword() {
+                const value = document.getElementById('confirm-password').value
+                const element_id = document.getElementById('error-messages-confirm-password')
+                if(value == ''){
+                  element_id.innerHTML = `Can't be empety`
+                } else if (value != document.getElementById('password').value) {
+                  element_id.innerHTML = `Passwords don't match`
+                } else {
+                  element_id.innerHTML = ``
+                }
+              }
+              function toggleConfirmPassword() {
+                const element = document.getElementById('confirm-password')
+                const eye = document.getElementById('eye-confirm-password')
+                if(element.type == 'password') {
+                  element.type = 'text'
+                  eye.classList.add('fa-eye-slash')
+                  eye.classList.remove('fa-eye')
+                } else {
+                  element.type = 'password'
+                  eye.classList.remove('fa-eye-slash')
+                  eye.classList.add('fa-eye')
+                }
+              }
+            div(class="text-rose-900 py-1", role="alert")
+              p#error-messages-confirm-password(class="text-sm font-semibold mt-1")
+        if errorCode
+          div(class="text-rose-900 py-1", role="alert")
+            p#error-messages-password(class="text-sm font-semibold mt-1 text-center") 
+              | #{errorCode}
+        div
+          button(type="submit", class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600") Register
+      script.
+        function validateForm() {
+          var email = document.forms["formRegister"]["email"].value;
+          var password = document.forms["formRegister"]["password"].value;
+          var confrim_password = document.forms["formRegister"]["confirm-password"].value;
+
+          var element_id_email = document.getElementById('error-messages-email')
+          var regex_mail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+          if(email == ''){
+            element_id_email.innerHTML = `Can't be empety`
+            document.forms["formRegister"]["email"].focus()
+            return false;
+          } else if (!email.match(regex_mail)) {
+            element_id_email.innerHTML = `Invalid email`
+            document.forms["formRegister"]["email"].focus()
+            return false;
+          }
+
+          var element_id_password = document.getElementById('error-messages-password')
+          var regex_password = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+          if(password == ''){
+            element_id_password.innerHTML = `Can't be empety`
+            document.forms["formRegister"]["password"].focus()
+            return false;
+          } else if (!password.match(regex_password)) {
+            element_id_password.innerHTML = `Minimum eight characters, at least one uppercase letter, and one number`
+            document.forms["formRegister"]["password"].focus()
+            return false;
+          }
+
+          var element_id_confirm_password = document.getElementById('error-messages-confirm-password')
+          if(confrim_password == ''){
+            element_id_confirm_password.innerHTML = `Can't be empety`
+             return false;
+          } else if (confrim_password != document.getElementById('password').value) {
+            element_id_confirm_password.innerHTML = `Passwords don't match`
+             return false;
+          }
+
+        }
+      p(class="mt-10 text-center text-sm text-gray-500")
+        | Have an account?
+        a(href="/login", class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500")
+          |&nbsp;Login

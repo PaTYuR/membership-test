@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  section(class="bg-white py-12")
+    div(class="w-full")
+      div(class="text-center")
+        div(class="h-96 bg-no-repeat bg-auto bg-center", style="background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif)")
+          p(class="text-center font-semibold text-7xl") 404
+        div(class="flex flex-col items-center")
+          p(class="text-2xl font-semibold")
+            | Look like you&apos;re lost
+          p(class="text-base")
+            |the page you are looking for not avaible!
+          div(class="mt-6")
+            a(href="/", class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600") Go to Home
